@@ -125,3 +125,90 @@ def greet_name(name: str) -> None:
     """
     print(f"Hello {name}~")
 ```
+
+## Multiple Parameters
+
+- We can of course have multiple parameters
+- Code the following function.
+- Test the function:
+
+```cs
+greet_name_age("Annie", 20)
+greet_name_age("Bob", 43)
+
+Hello Annie, you are 20 years old!
+Hello Bob, you are 43 years old!
+
+```
+
+```cs
+def greet_name_age(name: str, age: int)->None:
+    """
+    Prints a greeting which includes 
+    the values of the name and age arguments.
+    Args:
+        name (str): The name of the person to greet.
+        age (int): The age of the person to greet.
+    Returns:
+        None
+    """
+    print(f"Hello {name}, you are {age} years old!")
+
+```
+
+## Return Values
+
+- Functions can return a value using the return keyword, followed by the value to be returned
+- When a return statement is executed, the function exits, and the returned value is passed back to the caller.
+
+- Code the following function
+
+```cs
+def math_operation(operand1: int, operand2: int, operation: str) -> float:
+    """
+    Returns the result of the specified operation based 
+    on the two operands.
+    Args:
+        operand1 (int): The first operand.
+        operand2 (int): The second operand.
+        operation (str): The operation to perform.
+    Returns:
+        result (float): result of the specified operation based 			on the two operands.
+    """
+    if operation == "+":
+        result = operand1 + operand2
+    else:
+        result = operand1 - operand2    
+    return result
+```
+
+Test the function:
+
+## Raising exceptions
+
+- Your function must be able to handle all possible inputs
+- To account for unexpected inputs, use exceptions
+
+- Modify the math_operation function as follows:
+
+```cs
+def math_operation(operand1: int, operand2: int, operation: str) -> float:
+    """
+    Returns the result of the specified operation based 
+    on the two operands.
+    Args:
+        ………
+    Returns:
+        ………
+    Raises:
+        ValueError:  "Invalid operation." When operation is not + or -.
+    """
+    if operation == "+":
+        result = operand1 + operand2
+    elif operation == "-":
+        result = operand1 - operand2
+    else:
+        raise ValueError("Invalid operation.")
+    return result
+
+```
