@@ -24,7 +24,8 @@ greet_name("Ivan", 24)
 print(greet_name.__doc__)
 #print(print.__doc__)
 
-def math_operation(operand1: int, operand2: int, operation: str) -> float:
+def math_operation(operand1: int, operand2: int,
+                    operation: str = "+") -> float:
     """
     Returns:
         The result of the specified operation based on the two operands.
@@ -32,7 +33,7 @@ def math_operation(operand1: int, operand2: int, operation: str) -> float:
     Args:
         operand1 (int): The first operand
         operand2 (int): The second operand
-        operand (str) The operation to perform.
+        operand (str) The operation to perform, default = "+"
     
     Returns: 
         result(float): result of the specified operation based on the two operand.
@@ -64,6 +65,6 @@ try:
 
 except ValueError as e:
     print(e)
-    
+
 print(greet_name.__doc__)
 
